@@ -22,7 +22,7 @@ public class PropondoLanceSteps {
 		lance = new Lance(usuario , BigDecimal.TEN);
 	}
 	
-	@Quando("propoe o lance")
+	@Quando("propoe ao leilao")
 	public void quando_propoe_o_lance() {
 		leilao = new Leilao("Galaxy Tab S6");
 		leilao.propoe(lance);
@@ -30,7 +30,7 @@ public class PropondoLanceSteps {
 	
 	@Entao("o lance eh aceito")
 	public void entao_o_lance_eh_aceito() {
-		assertEquals(2, leilao.getLances().size());
+		assertEquals(1, leilao.getLances().size());
 		assertEquals(BigDecimal.TEN, leilao.getLances().get(0).getValor());
 	}
 }
